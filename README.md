@@ -1,8 +1,6 @@
 # LightoHub
-|------------------------|
-| ROBLOX RELATED SCRIPTS |
-|------------------------|
-Currently in Development!
+An ongoing Roblox script hub!
 
-1/3/2024 (DD/MM/YYYY):
- Swordburst 3 script released.
+# Date of published
+DD/MM/YYYY
+- 01/03/2024: Swordburst 3 script released.
