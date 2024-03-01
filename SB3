@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Swordburst 3", HidePremium = false, SaveConfig = true, ConfigFolder = "Swordburst3", ShowIcon = true})
+local Window = OrionLib:MakeWindow({Name = "Swordburst 3", HidePremium = false, SaveConfig = true, ConfigFolder = "SB3", ShowIcon = true})
 
 local mainTab = Window:MakeTab({
 	Name = "Main",
@@ -65,10 +65,10 @@ local bosses = {}
 local quests = {}
 local waystone = {}
 local swordburst = {}
-local methods = {"above", "below", "behind"}
+local methods = {"Above", "Below", "Behind"}
 local category = {"Material", "Mount", "Cosmetic", "Pickaxe"}
-local raritys = {"common (white)", "uncommon (green) and below", "rare (blue) and below", "epic (purple) and below", "legendary (orange) and below"}
-local realrarity = {["common (white)"] = 1, ["uncommon (green) and below"] = 2, ["rare (blue) and below"] = 3, ["epic (purple) and below"] = 4, ["legendary (orange) and below"] = 5,}
+local raritys = {"Common", "Uncommon and below", "Rare and below", "Epic and below", "Legendary and below"}
+local realrarity = {["Common"] = 1, ["Uncommon and below"] = 2, ["Rare and below"] = 3, ["Epic and below"] = 4, ["Legendary and below"] = 5,}
 
 local function getchar()
     return lplr.Character or lplr.CharacterAdded:Wait()
@@ -116,8 +116,8 @@ local Section1 = mainTab:AddSection({
 })
 
 mainTab:AddDropdown({
-	Name = "Select Auto farm method",
-	Default = "behind",
+	Name = "Select Auto Farm Method",
+	Default = "Behind",
 	Options = methods,
 	Callback = function(Value)
 		method = Value
@@ -131,7 +131,7 @@ mainTab:AddSlider({
 	Default = 15,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
-	ValueName = "distance",
+	ValueName = "Distance",
 	Callback = function(Value)
 		dist = Value
 	end    
@@ -146,7 +146,7 @@ mainTab:AddDropdown({
 	end    
 })
 
-mainTab:AddParagraph("Auto Farm Mobs","If no one in the area the mobs wont spawn")
+mainTab:AddParagraph("Auto Farm Mobs","If no one in the area, the mobs won't spawn")
 mainTab:AddToggle({
 	Name = "Auto Farm Mobs",
 	Default = false,
@@ -164,7 +164,7 @@ mainTab:AddDropdown({
 	end    
 })
 
-mainTab:AddParagraph("Auto Farm Boss","when boss havent spawn will farm selected mob when mob is spawned")
+mainTab:AddParagraph("Auto Farm Boss","when boss haven't spawn will farm selected mob when mob is spawned")
 mainTab:AddToggle({
 	Name = "Auto Farm Boss",
 	Default = false,
@@ -339,12 +339,8 @@ miscTab:AddButton({
   	end    
 })
 
-creditTab:AddLabel("Scripts Made by fallen_del")
+creditTab:AddLabel("Acharne.")
 creditTab:AddLabel("UI Library by Shlex")
-creditTab:AddButton({
-	Name = "Discord Server",
-	Callback = function()
-        setclipboard("https://discord.gg/auzBFqDrwZ")
   	end    
 })
 
@@ -357,11 +353,11 @@ settingsTab:AddButton({
 
 local function methodss()
     if method and dist then
-        if method == "above" then
+        if method == "Above" then
             return CFrame.new(0, dist, 0)
-        elseif method == "below" then
+        elseif method == "Below" then
             return CFrame.new(0, -dist,0)
-        elseif method == "behind" then
+        elseif method == "Behind" then
             return CFrame.new(0,0, dist)
         end
     end
