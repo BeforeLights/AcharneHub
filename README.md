@@ -5,4 +5,4 @@ An ongoing Roblox script hub!
 DD/MM/YYYY
 - 01/03/2024: Swordburst 3 script released.
   
- "loadstring(game:HttpGet("https://raw.githubusercontent.com/BeforeLights/AcharneHub/main/SB3"))()"
+ "loadstring(game:HttpGet("https://raw.githubusercontent.com/BeforeLights/AcharneHub/main/SB3.lua"))()"
